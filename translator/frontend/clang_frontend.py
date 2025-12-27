@@ -18,22 +18,16 @@ def dump_ast(filename: str):
     )
 
     def visit(node, indent=0):
-        print("  " * indent, node.kind, node.spelling, node.type.spelling)
-        if node.kind == CursorKind.INTEGER_LITERAL:
-            res = lower_expr(node)
-            #print(f"type: {res.ty}, value: {res.value}")
-        if node.kind == CursorKind.BINARY_OPERATOR:
-            res = lower_expr(node)
-            #print(f"type: {res.ty}, op: {res.op}, lhs: {res.lhs}, rhs: {res.rhs}")
+        print("  " * indent, node.kind, node.spelling, getattr(node.type, "spelling", ""))
         for c in node.get_children():
             visit(c, indent + 1)
 
     visit(tu.cursor)
 
     for c in tu.cursor.get_children():
-        if c.kind == CursorKind.FUNCTION_DECL and c.spelling == "main":
+        if c.kind == CursorKind.FUNCTION_DECL :
             fn = lower_function(c)
-            typecheck_function(fn)
+            #typecheck_function(fn)
             emitter = CarbonEmitter(rules=DEFAULT_CARBON_RULES)
             code = emitter.emit_function(fn)
             print("=== Carbon ===")

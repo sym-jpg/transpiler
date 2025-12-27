@@ -12,7 +12,16 @@ BIN_OP = {
 UN_OP = { UnOp.NOT: "not" }
 
 def emit_var(emitter, expr):
-        return expr.name
+    return expr.name
+
+def emit_blockstmt(emitter, stmt: BlockStmt, indent: int) -> list[str]:
+    pad = "  " * indent
+    lines = [f"{pad}{{"]
+    for s in stmt.block.stmts:
+        fn = emitter.rules.stmt(s)
+        lines += fn(emitter, s, indent + 1)
+    lines.append(f"{pad}}}")
+    return lines
     
 def emit_binary(emitter, expr):
     return f"({emitter.emit_expr(expr.lhs)} {emitter.emit_op(expr.op)} {emitter.emit_expr(expr.rhs)})"
@@ -66,6 +75,10 @@ def emit_if(emitter, stmt, indent):
     lines.append(f"{pad}}}")
     return lines
 
+def emit_exprstmt(emitter, stmt: ExprStmt, indent: int) -> list[str]:
+    pad = "  " * indent
+    return [f"{pad}{emitter.emit_expr(stmt.expr)};"]
+
 class CarbonEmitter:
     def __init__(self, rules: RuleSet):
         self.rules = rules
@@ -83,6 +96,7 @@ class CarbonEmitter:
         lines = []
         for stmt in block.stmts:
             fn = self.rules.stmt(stmt)
+            print(fn)
             lines += fn(self, stmt, indent)
         return lines
 
@@ -106,3 +120,4 @@ class CarbonEmitter:
     def emit_unary_op(self, op: UnOp) -> str:
         return UN_OP[op]
 
+    

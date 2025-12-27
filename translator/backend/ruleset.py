@@ -23,6 +23,7 @@ class RuleSet:
         try:
             return self.stmt_emitters[type(node)]
         except KeyError:
+            print(node)
             raise NotImplementedError(f"No stmt rule for {type(node).__name__}")
 
     def overlay(self, other: "RuleSet") -> "RuleSet":

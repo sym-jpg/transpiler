@@ -66,6 +66,10 @@ class Stmt:
     pass
 
 @dataclass(frozen=True)
+class ExprStmt(Stmt):
+    expr: Expr
+
+@dataclass(frozen=True)
 class VarDecl(Stmt):
     var: Var
     init: Optional[Expr] = None
@@ -79,10 +83,13 @@ class Assign(Stmt):
 class Return(Stmt):
     value: Expr
 
-
 @dataclass(frozen=True)
 class Block(Stmt):
     stmts: List[Stmt]
+
+@dataclass(frozen=True)
+class BlockStmt(Stmt):
+    block: Block
 
 @dataclass(frozen=True)
 class If(Stmt):

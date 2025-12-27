@@ -13,7 +13,7 @@ from translator.ir.nodes import (
     # exprs
     Expr, Literal, Var, Cast, Unary, Binary,
     # ops
-    BinOp, UnOp,
+    BinOp, UnOp, ExprStmt
 )
 
 # ---- helpers ----
@@ -67,6 +67,11 @@ def typecheck_stmt(stmt: Stmt, fn_ret_ty: Type) -> None:
                 )
         return
 
+    if isinstance(stmt, ExprStmt):
+        # 只要 expr 本身能通过 typecheck 就行
+        typecheck_expr(stmt.expr)
+        return
+    
     if isinstance(stmt, Assign):
         vt = stmt.target.ty
         et = typecheck_expr(stmt.value)
@@ -162,6 +167,8 @@ def typecheck_expr(expr: Expr) -> Type:
 
         # 2) 比较：numeric 同类型 -> Bool
         if expr.op in (BinOp.LT, BinOp.LE, BinOp.GT, BinOp.GE):
+            print(lt)
+            print(rt)
             if not (_is_numeric(lt) and _same_type(lt, rt) and _is_bool(expr.ty)):
                 raise _err(
                     f"Comparison expects same numeric types -> Bool: lhs={lt.short()} rhs={rt.short()} result={expr.ty.short()}",
