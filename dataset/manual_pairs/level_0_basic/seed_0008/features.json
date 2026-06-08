@@ -1,0 +1,15 @@
+{
+  "seed": 8,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "global_var",
+    "local_var",
+    "cast",
+    "if_else",
+    "logical_or",
+    "signed_int32_sub",
+    "return"
+  ],
+  "note": "基础表达式、显式类型转换和逻辑或样例。"
+}

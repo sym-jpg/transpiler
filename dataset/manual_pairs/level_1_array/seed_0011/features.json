@@ -1,0 +1,14 @@
+{
+  "seed": 11,
+  "level": "level_1_array",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "array",
+    "array_index",
+    "while",
+    "unsigned_int32_add",
+    "cast",
+    "return"
+  ],
+  "note": "无符号数组遍历和累加样例。"
+}

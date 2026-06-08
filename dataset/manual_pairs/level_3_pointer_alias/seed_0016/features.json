@@ -1,0 +1,14 @@
+{
+  "seed": 16,
+  "level": "level_3_pointer_alias",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "addr_of",
+    "deref",
+    "pointer_compare",
+    "static_alias",
+    "local_var",
+    "return"
+  ],
+  "note": "局部变量指针、非空比较和解引用写回样例。"
+}

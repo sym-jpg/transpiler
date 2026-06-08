@@ -1,0 +1,95 @@
+{
+  "target": "Cangjie",
+  "root": "dataset/manual_pairs",
+  "stages": [
+    {
+      "name": "level_0_basic_expr",
+      "level": "level_0_basic",
+      "features": [
+        "global_var",
+        "local_var",
+        "signed_int32_add",
+        "signed_int32_sub",
+        "unsigned_int32_add",
+        "if_else",
+        "return"
+      ],
+      "rules": [
+        "expr:Literal",
+        "expr:Var",
+        "expr:Binary",
+        "expr:Cast",
+        "expr:Unary"
+      ]
+    },
+    {
+      "name": "level_0_basic_stmt",
+      "level": "level_0_basic",
+      "features": [
+        "global_var",
+        "local_var",
+        "default_init",
+        "if_else",
+        "return"
+      ],
+      "rules": [
+        "stmt:VarDecl",
+        "stmt:Assign",
+        "stmt:If",
+        "stmt:Return",
+        "stmt:ExprStmt"
+      ]
+    },
+    {
+      "name": "level_1_array_loop",
+      "level": "level_1_array",
+      "features": [
+        "array",
+        "array_index",
+        "while",
+        "array_write_back",
+        "multidim_array_writeback",
+        "signed_int32_add"
+      ],
+      "rules": [
+        "expr:Index",
+        "expr:InitList",
+        "stmt:While",
+        "stmt:Assign"
+      ]
+    },
+    {
+      "name": "level_2_side_effect",
+      "level": "level_2_side_effect",
+      "features": [
+        "assign_expr",
+        "short_circuit",
+        "side_effect_lowering"
+      ],
+      "rules": [
+        "expr:Assign",
+        "expr:Binary",
+        "stmt:Assign",
+        "stmt:If"
+      ]
+    },
+    {
+      "name": "level_3_pointer_alias",
+      "level": "level_3_pointer_alias",
+      "features": [
+        "addr_of",
+        "deref",
+        "pointer_assign",
+        "pointer_compare",
+        "static_alias"
+      ],
+      "rules": [
+        "expr:AddrOf",
+        "expr:Deref",
+        "stmt:Assign",
+        "stmt:VarDecl"
+      ],
+      "enabled": true
+    }
+  ]
+}

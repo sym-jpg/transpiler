@@ -1,0 +1,13 @@
+{
+  "seed": 3,
+  "level": "level_2_side_effect",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "comma_expr",
+    "assign_expr",
+    "short_circuit",
+    "side_effect_lowering",
+    "return"
+  ],
+  "note": "副作用表达式样例，人工参考程序显式拆分求值顺序。"
+}

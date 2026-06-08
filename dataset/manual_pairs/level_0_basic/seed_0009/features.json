@@ -1,0 +1,15 @@
+{
+  "seed": 9,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "global_var",
+    "local_var",
+    "default_init",
+    "signed_int32_add",
+    "unsigned_int32_add",
+    "cast",
+    "return"
+  ],
+  "note": "默认初始化和有符号/无符号加法混合样例。"
+}

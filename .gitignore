@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# macOS / editor
+.DS_Store
+.vscode/
+.env
+.env.local
+
+# Local thesis and submission artifacts
+论文终稿/
+*.zip
+*_终稿.pdf
+final_version.pdf
+
+# Local scratch files
+/core.c
+/temptest.c
+/checksum_vars.json
+/code_function_notes.md
+
+# Cangjie build artifacts
+*.cjo
+.cjc_temps/
+**/.cjc_temps/
+**/a_c
+**/a_cj
+
+# Generated differential-test outputs
+dataset/difftest/
+dataset/manual_pair_eval/
+dataset/manual_pair_learn/
+dataset/cjtest.cj
+
+# Keep the small, curated manual pairs used by route B.
+!dataset/manual_pairs/
+!dataset/manual_pairs/**

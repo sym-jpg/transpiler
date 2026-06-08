@@ -1,0 +1,15 @@
+{
+  "seed": 7,
+  "level": "level_1_array",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "array",
+    "array_index",
+    "multidim_array_writeback",
+    "assign",
+    "signed_int32_add",
+    "return"
+  ],
+  "note": "二维数组写回样例，用于指导 Assign emitter 独立生成 VArray 临时变量写回逻辑。"
+}
+

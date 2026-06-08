@@ -1,0 +1,16 @@
+{
+  "seed": 6,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "default_init",
+    "global_var",
+    "local_var",
+    "array",
+    "array_index",
+    "assign",
+    "return"
+  ],
+  "note": "无初始化全局/局部变量和一维数组默认初始化样例，用于指导 VarDecl emitter 独立生成默认值。"
+}
+

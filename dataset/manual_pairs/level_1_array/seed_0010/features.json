@@ -1,0 +1,15 @@
+{
+  "seed": 10,
+  "level": "level_1_array",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "array",
+    "multidim_array",
+    "array_index",
+    "while",
+    "array_write_back",
+    "multidim_array_writeback",
+    "return"
+  ],
+  "note": "二维数组循环写回样例。"
+}

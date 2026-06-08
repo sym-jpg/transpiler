@@ -1,0 +1,14 @@
+{
+  "seed": 2,
+  "level": "level_1_array",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "array",
+    "array_index",
+    "while",
+    "array_write_back",
+    "signed_int32_add",
+    "return"
+  ],
+  "note": "一维数组读写样例，用于指导 Index 和数组赋值 emitter。"
+}

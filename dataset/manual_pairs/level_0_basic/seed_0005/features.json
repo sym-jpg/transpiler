@@ -1,0 +1,15 @@
+{
+  "seed": 5,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "function",
+    "call",
+    "expr_stmt",
+    "assign",
+    "signed_int32_add",
+    "return"
+  ],
+  "note": "函数调用和表达式语句样例，用于指导 Call/ExprStmt emitter。"
+}
+

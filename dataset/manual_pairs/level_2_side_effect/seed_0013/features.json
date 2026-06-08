@@ -1,0 +1,13 @@
+{
+  "seed": 13,
+  "level": "level_2_side_effect",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "comma_expr",
+    "assign_expr",
+    "side_effect_lowering",
+    "signed_int32_add",
+    "return"
+  ],
+  "note": "逗号表达式顺序求值样例。"
+}

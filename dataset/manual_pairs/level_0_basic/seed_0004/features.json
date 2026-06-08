@@ -1,0 +1,16 @@
+{
+  "seed": 4,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "global_var",
+    "local_var",
+    "cast",
+    "unary_minus",
+    "unary_not",
+    "if_else",
+    "return"
+  ],
+  "note": "基础类型转换和一元表达式样例，用于指导 Cast/Unary/Binary emitter。"
+}
+

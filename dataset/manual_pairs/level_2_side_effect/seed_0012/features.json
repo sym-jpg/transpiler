@@ -1,0 +1,14 @@
+{
+  "seed": 12,
+  "level": "level_2_side_effect",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "assign_expr",
+    "short_circuit",
+    "side_effect_lowering",
+    "signed_int32_add",
+    "signed_int32_sub",
+    "return"
+  ],
+  "note": "短路逻辑中的赋值副作用样例。"
+}

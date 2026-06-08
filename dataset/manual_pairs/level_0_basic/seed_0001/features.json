@@ -1,0 +1,15 @@
+{
+  "seed": 1,
+  "level": "level_0_basic",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "global_var",
+    "local_var",
+    "if_else",
+    "signed_int32_add",
+    "signed_int32_sub",
+    "unsigned_int32_add",
+    "return"
+  ],
+  "note": "最小人工数据对样例，用于验证目录规范和 emitter 基础语法。"
+}

@@ -1,0 +1,13 @@
+{
+  "seed": 14,
+  "level": "level_3_pointer_alias",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "addr_of",
+    "deref",
+    "pointer_assign",
+    "static_alias",
+    "return"
+  ],
+  "note": "基础取地址、解引用和静态别名写回样例。"
+}

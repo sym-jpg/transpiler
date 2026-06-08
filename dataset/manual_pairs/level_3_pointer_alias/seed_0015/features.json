@@ -1,0 +1,13 @@
+{
+  "seed": 15,
+  "level": "level_3_pointer_alias",
+  "csmith_profile": "manual_minimal",
+  "features": [
+    "addr_of",
+    "deref",
+    "pointer_assign",
+    "static_alias",
+    "return"
+  ],
+  "note": "指针重定向到另一全局变量的静态别名样例。"
+}
